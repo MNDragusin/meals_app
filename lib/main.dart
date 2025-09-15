@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:meals_app/app_theme.dart';
-import 'package:meals_app/screens/categories_screen.dart';
+import 'package:meals_app/screens/tabs.dart';
 
 void main(){
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: theme,
-      home: const CategoriesScreen()
+      home: const TabsScreen()
     );
   }
 }
