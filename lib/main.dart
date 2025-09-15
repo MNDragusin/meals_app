@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: defaultTheme,
-      darkTheme: defaultDarkTheme,
+      theme: theme,
       home: const CategoriesScreen()
     );
   }

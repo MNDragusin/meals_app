@@ -10,6 +10,15 @@ final defaultTheme = ThemeData.light().copyWith(
 
 final defaultDarkTheme = ThemeData.dark().copyWith(
   brightness: Brightness.dark,
-  colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 131, 50, 0)),
+  colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 131, 57, 0)),
+  textTheme: GoogleFonts.latoTextTheme(),
+);
+
+final theme = ThemeData(
+  useMaterial3: true,
+  colorScheme: ColorScheme.fromSeed(
+    brightness: Brightness.dark,
+    seedColor: const Color.fromARGB(255, 131, 57, 0),
+  ),
   textTheme: GoogleFonts.latoTextTheme(),
 );

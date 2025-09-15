@@ -5,9 +5,10 @@ import '../model/meal.dart';
 import 'meal_item_trait.dart';
 
 class MealItem extends StatelessWidget {
-  const MealItem({super.key, required this.meal});
+  const MealItem({super.key, required this.meal, required this.onSelectMeal});
 
   final Meal meal;
+  final void Function(Meal meal) onSelectMeal;
 
   String _toFirstLetterUpperCase(String value) {
     return value[0].toUpperCase() + value.substring(1);
@@ -21,7 +22,7 @@ class MealItem extends StatelessWidget {
       elevation: 2,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: InkWell(
-        onTap: () {},
+        onTap: () => onSelectMeal(meal),
         child: Stack(
           children: [
             FadeInImage(
