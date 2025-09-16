@@ -9,10 +9,13 @@ class MealsScreen extends StatelessWidget {
     super.key,
     this.title,
     required this.availableMeals,
+    required this.onToggleFavorite,
   });
 
   final String? title;
   final List<Meal> availableMeals;
+
+  final void Function(Meal meal) onToggleFavorite;
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +36,12 @@ class MealsScreen extends StatelessWidget {
   }
 
   void selectMeal(BuildContext context, Meal meal) {
-    Navigator.of(
-      context,
-    ).push(MaterialPageRoute(builder: (ctx) => MealDetailsScreen(meal: meal)));
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (ctx) =>
+            MealDetailsScreen(meal: meal, onToggleFavorite: onToggleFavorite),
+      ),
+    );
   }
 
   Widget createMissingContent(BuildContext ctx) {
@@ -67,7 +73,10 @@ class MealsScreen extends StatelessWidget {
     return ListView.builder(
       itemCount: availableMeals.length,
       itemBuilder: (ctx, index) {
-        return MealItem(meal: availableMeals[index], onSelectMeal:(meal)=> selectMeal(context, meal));
+        return MealItem(
+          meal: availableMeals[index],
+          onSelectMeal: (meal) => selectMeal(context, meal),
+        );
       },
     );
   }
