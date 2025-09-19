@@ -13,7 +13,7 @@ class FiltersScreen extends StatefulWidget {
 
 class _FiltersScreenState extends State<FiltersScreen> {
   var _glutenFreeFilterSet = false;
-  var _darryfreeFilterSet = false;
+  var _lactoseFreeFilterSet = false;
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +40,12 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   _glutenFreeFilterSet = isChecked;
                 });
               }),
-          FilterSwitch(title: 'Darry-free',
-              subtitle: 'Only include darry-free meals.',
-              currentValue: _darryfreeFilterSet,
+          FilterSwitch(title: 'Lactose-free',
+              subtitle: 'Only include lactose-free meals.',
+              currentValue: _lactoseFreeFilterSet,
               onChanged: (isChecked) {
                 setState(() {
-                  _darryfreeFilterSet = isChecked;
+                  _lactoseFreeFilterSet = isChecked;
                 });
               }),
         ],
